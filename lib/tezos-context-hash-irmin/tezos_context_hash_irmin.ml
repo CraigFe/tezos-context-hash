@@ -10,5 +10,5 @@ module Conf = struct
   let stable_hash = 256
 end
 
-module Maker = Irmin_pack.Maker_ext (V1) (Conf) (Node) (Commit)
+module Maker = Irmin_pack.Maker_ext (V1) (Conf)
 module Store = Maker.Make (Schema)
