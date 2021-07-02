@@ -23,7 +23,13 @@
 (*                                                                           *)
 (*****************************************************************************)
 
-module Schema : Irmin.Schema.S with type contents = bytes and type metadata = unit and type path = string list and type step = string and type branch = string
+module Schema :
+  Irmin.Schema.S
+    with type Contents.t = bytes
+     and type Metadata.t = unit
+     and type Path.t = string list
+     and type Path.step = string
+     and type Branch.t = string
 
 (* TODO(craigfe): shouldn't we just export [Schema] here? *)
 module Node : Irmin.Node.Maker
